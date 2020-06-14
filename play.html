@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
@@ -26,30 +26,32 @@
             <p  class="text-center">Don't you love slot machines?  </p>
         </div>
 
-      <div class="subtext mt-5">
-        <form class="contact-form" action="sendemail.php" method="post" enctype="text/plain">
-          <input id="name" placeholder="Name *" class="form-control">
-                    <input id="email" placeholder="E-mail *" class="form-control mt-2">
-                    <input s id="number" placeholder="Mobie number *" class="form-control mt-2">
-                   
-                    <input type="button" style="color:white !important;" onclick="sendEmail()" value="Regsiter with us to play more games" class="btnn mt-4">
-        </form>
-      </div>
+        <div class="subtext mt-3">
+          <div class="form ">
+
+     
+          <input id="name" placeholder="Name" class="form-control">
+                <input id="email" placeholder="Email" class="form-control mt-1">
+                <input id="subject" placeholder="Subject" class="form-control mt-1">
+                <textarea class="form-control mt-1" id="body" placeholder="Email Body"></textarea>
+                <input type="button" onclick="sendEmail()" value="Sign up with us!" class="btnn btn-primary mt-4 animated flash slow infinite">
+              </div>
+        </div>
       
      
     </div>
 
-    <div class="slots">
-        <div class="item i1">
+    <div class="slots" >
+        <div class="item i1 " data-aos="fade-in">
             <img src="slot1.jpg" class="img-fluid" onclick="window.location.href = 'game1.html';">
         </div>
-        <div class="item i2">
+        <div class="item i2" data-aos="fade-in">
             <img src="slot2.jpg" class="img-fluid" onclick="window.location.href = 'game2.html';"> 
         </div>
-        <div class="item i3">
+        <div class="item i3" data-aos="fade-in">
             <img src="slot3.jpg" class="img-fluid"  onclick="window.location.href = 'game3.html';">
         </div>
-        <div class="item i4">
+        <div class="item i4" data-aos="fade-in">
             <img src="slot4.jpg" class="img-fluid"  onclick="window.location.href = 'game4.html';">
         </div>
 
@@ -73,7 +75,7 @@
 
     <div class="footer text-center">
         <div class="item">
-            <p>The nerdspace.info are intended for an adult audience only.
+            <p>The nerdspace.info games are intended for an adult audience only.
               War Planet Online is a MMO 
                 All games are free to play and no money is ever needed play.</p>
         </div>
@@ -92,50 +94,46 @@
         </div>
       </div>
     
+      <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
       <script type="text/javascript">
-        function form_submit() {
-          document.getElementById("search_form").submit();
-         }    
-        </script>
-    <script type="text/javascript">
-      function sendEmail() {
-        alert("Success");
-          var name = $("#name");
-          var email = $("#email");
-          var number = $("#number");
-    
-          if (isNotEmpty(name)) {
-              $.ajax({
-                 url: 'sendEmail.php',
-                 method: 'POST',
-                 dataType: 'json',
-                 data: {
-                     name: name.val(),
-                     email: email.val(),
-                     number: number.val(),
-                 }, success: function (response) {
-                      if (response.status == "success")
-                          alert('Email Has Been Sent!');
-                      else {
-                          alert('Please Try Again!');
-                          console.log(response);
-                      }
-                 }
-              });
+          function sendEmail() {
+              var name = $("#name");
+              var email = $("#email");
+              var subject = $("#subject");
+              var body = $("#body");
+  
+              if (isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(body)) {
+                  $.ajax({
+                     url: 'sendEmail.php',
+                     method: 'POST',
+                     dataType: 'json',
+                     data: {
+                         name: name.val(),
+                         email: email.val(),
+                         subject: subject.val(),
+                         body: body.val()
+                     }, success: function (response) {
+                          if (response.status == "success")
+                              alert('Email Has Been Sent!');
+                          else {
+                              alert('Please Try Again!');
+                              console.log(response);
+                          }
+                     }
+                  });
+              }
           }
-      }
-    
-      function isNotEmpty(caller) {
-          if (caller.val() == "") {
-              caller.css('border', '2px solid #F7F4D2');
-              return false;
-          } else
-              caller.css('border', '');
-    
-          return true;
-      }
-    </script>
-    
+  
+          function isNotEmpty(caller) {
+              if (caller.val() == "") {
+                  caller.css('border', '1px solid red');
+                  return false;
+              } else
+                  caller.css('border', '');
+  
+              return true;
+          }
+      </script> 
       <script>
         $(document).ready(function(){
             
@@ -150,7 +148,7 @@
      <script>
         AOS.init();
       </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
