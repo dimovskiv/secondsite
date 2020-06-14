@@ -142,7 +142,7 @@ body, html {
     position:fixed;
     bottom:0;
     width:100%;
-    background-color:	#144a62;
+    background-color:	#222222;
     height:200px;
     display:flex;
     flex-direction:column;
@@ -276,7 +276,7 @@ body, html {
 
 .mastheadP {
     background-image: url("bg.png");
-    height:50%;
+    height:80%;
     display:flex;
     justify-content: center;
     align-items:center;
@@ -291,9 +291,16 @@ body, html {
     }
 
     h3 {
-        color:	white;
+        color:	#ffd25a;
         opacity:0.8;
     }
+
+    .btnn {
+        background-color:#ffd25a;
+        padding:10px;
+        border:none;
+        border-radius:20px;
+     }
 
     
 }
@@ -485,7 +492,7 @@ body, html {
 
  .mastheadP {
      padding:3rem;
-     background-color:154961!important;
+     background-color:#154961!important;
      background:none;
      background-repeat: repeat-y;
      h3 {
