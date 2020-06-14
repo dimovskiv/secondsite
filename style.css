@@ -31,7 +31,7 @@ body, html {
 }
 
 .masthead {
-  height: 90%;
+  height: 100%;
   background-image: url("bg.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -60,6 +60,10 @@ body, html {
 
 .masthead .subtext .img-fluid {
   height: 200px;
+}
+
+.masthead .subtext p {
+  opacity: 0.8;
 }
 
 .masthead .subtext h2 {
@@ -442,6 +446,7 @@ body, html {
   }
   .masthead {
     background-image: url("bgbig2.png");
+    height: 100%;
   }
   .masthead .subtext {
     display: none;
@@ -552,7 +557,7 @@ body, html {
     font-size: 50px;
   }
   .mastheadP p {
-    font-size: 20px;
+    font-size: 30px;
     margin-top: 10px;
     color: white;
   }

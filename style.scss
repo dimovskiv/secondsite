@@ -38,7 +38,7 @@ body, html {
 }
 
 .masthead {
-    height:90%;
+    height:100%;
     background-image: url("bg.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -60,6 +60,9 @@ body, html {
             height:200px;
         }
 
+        p {
+            opacity:0.8;
+        }
         h2 {
             color:	white;
             opacity:0.8;
@@ -374,6 +377,7 @@ body, html {
 
     .masthead {
         background-image: url("bgbig2.png");
+        height:100%;
 
         .subtext {
             display:none;
@@ -500,7 +504,7 @@ body, html {
      }
 
      p {
-         font-size:20px;
+         font-size:30px;
          margin-top:10px;
          color:white;
      }
